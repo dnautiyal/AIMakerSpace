@@ -1,0 +1,6 @@
+
+nltk
+pypdf
+chainlit==0.6.3
+llama_index==0.8.9
+openai==0.27.9
