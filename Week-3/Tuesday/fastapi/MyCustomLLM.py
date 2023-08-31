@@ -25,8 +25,8 @@ class FastApiLLM(LLM):
           while True:
             status = get_task_status(task_id)
             if "Task Pending" not in status:
-              return status
-              break
+              print(f"Task-id = {task_id} is ready. Time taken = {status['time']}, Memory used = {status['memory']}")
+              return status["result"]
             time.sleep(2)
         except:
           return "FastApiLLM: Exception encountered"
