@@ -34,3 +34,13 @@ services:
     image: "redis:alpine"
     ports:
       - 6379:6379
+  chainlit:
+    build: .
+    command: ["chainlit", "run", "main-chainlit.py", "--port", "7860"]
+    volumes:
+      - .:/app
+    ports:
+      - 7860:7860
+    depends_on:
+      - web
+
